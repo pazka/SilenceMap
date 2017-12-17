@@ -1,8 +1,13 @@
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize(process.env.bddbdd, process.env.bdduser, process.env.bddpsw,{host: 'http://54.37.70.57:8080',
-dialect: 'mysql',
-  // disable logging; default: console.log
-logging: false});
+/*var sequelize = new Sequelize(
+    'sound',
+     process.env.bdduser,
+      process.env.bddpsw,
+      {host: '54.37.70.57',
+      dialect: 'mysql',
+      // disable logging; default: console.log
+      logging: false});*/
+var sequelize = new Sequelize('mysql://'+process.env.bdduser+":"+process.env.bddpsw+'@54.37.70.57:3306/Silence')
 var sound = sequelize.define('sound', {
     id: {type: Sequelize.INTEGER, primaryKey : true},
     file: Sequelize.TEXT,

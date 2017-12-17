@@ -8,11 +8,14 @@ router.get('/soundId', function(req, res, next) {
 
 router.get('/soundByLoc', function(req, res, next) {
   db.findAll({where:{
-      lon : {[between] : [req.lon - req.radius, req.lon + req.radius]},
-      lat : {[between] : [req.lat - req.radius, req.lat + req.radius]}
+      lon : {between : [req.lon - req.radius, req.lon + req.radius]},
+      lat : {between : [req.lat - req.radius, req.lat + req.radius]}
   }}).then((allSounds)=>{
       res.send(allSounds);
-  });
+  }).error((err)=>{
+      console.log(err);
+      res.send(err);
+  });;
 });
 
 
@@ -28,7 +31,6 @@ router.post('newSound',(req,res,next) =>{
     }).error((err)=>{
         console.log(err);
         res.send(err);
-        return err;
     });
 });
 

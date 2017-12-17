@@ -1,7 +1,15 @@
 #map {
     height: 100vh;
     width: 100%;
-     clip-path: circle(300px at center);
+    clip-path: circle(300px at center);
+    z-index : 10;
       /* OLD VALUE example: circle(245px, 140px, 50px); */
       /* Yep, even the new clip-path has deprecated stuff. */
+}
+
+button{
+    position: absolute;
+    top: 50px;
+    left : 50px;
+    z-index: 50;
 }
