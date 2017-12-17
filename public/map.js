@@ -20,16 +20,17 @@ function getLocation(callback) {
 }
 
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: allMarks[0].pos,
-        styles : mapStyle
-    });
 
     var allMarks = [
         {pos :{lat:48.5840324, lng: 7.744312}, title :"Homme de fer", sound:"audio/homme de fer.mp3"},
         {pos :{lat:48.5834538, lng: 7.7456927}, title :"Place Kleber", sound:"audio/place kleber.mp3"}
     ];
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: allMarks[0].pos,
+        styles : mapStyle
+    });
 
     var i =0;
     window.markers= [];

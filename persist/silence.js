@@ -3,10 +3,13 @@ var sequelize = new Sequelize(process.env.bddbdd, process.env.bdduser, process.e
 dialect: 'mysql',
   // disable logging; default: console.log
 logging: false});
-var sound = sequelize.define('', {
-  title: Sequelize.STRING,
-  description: Sequelize.TEXT,
-  deadline: Sequelize.DATE
+var sound = sequelize.define('sound', {
+    id: {type: Sequelize.INTEGER, primaryKey : true},
+    file: Sequelize.TEXT,
+    name: Sequelize.TEXT,
+    lon: Sequelize.FLOAT,
+    lat: Sequelize.FLOAT,
+    createdAt: Sequelize.DATE
 });
 
 module.exports = sound;
