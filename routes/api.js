@@ -1,6 +1,11 @@
 var express = require('express');
 var db = require('../persist/silence');
 var router = express.Router();
+var Sequelize = require('sequelize');
+const fileUpload = require('express-fileupload');
+const Op = Sequelize.Op;
+
+
 /* GET home page. */
 router.get('/soundId', function(req, res, next) {
   res.sendfile('index.html');
@@ -8,29 +13,53 @@ router.get('/soundId', function(req, res, next) {
 
 router.get('/soundByLoc', function(req, res, next) {
   db.findAll({where:{
-      lon : {between : [req.lon - req.radius, req.lon + req.radius]},
-      lat : {between : [req.lat - req.radius, req.lat + req.radius]}
+      lon : {$between : [req.query.lon - req.query.radius, req.query.lon + req.query.radius]},
+      lat : {$between : [req.query.lat - req.query.radius, req.query.lat + req.query.radius]}
   }}).then((allSounds)=>{
       res.send(allSounds);
-  }).error((err)=>{
+  }).catch((err)=>{
       console.log(err);
       res.send(err);
-  });;
-});
+  })
+})
 
+router.use(fileUpload({ safeFileNames: true }));
 
-router.post('newSound',(req,res,next) =>{
-    db.create( {
-        file: "sounds/" + req.filename,
-        name: req.name || "Anonymous",
-        lon: req.lon,
-        lat: req.lat,
-        createdAt: new Date()
-    }).then((ret)=>{
-        res.sendStatus(200);
-    }).error((err)=>{
-        console.log(err);
-        res.send(err);
+var basePath = "./public/audio/";
+router.post('/newSound',(req,res,next) =>{
+    if(!req.body.filename || !req.body.name || !req.body.adr || !req.body.lon || !req.body.lat || !req.files)
+        return res.status(400).send('not all param present');
+
+    db.findAll({where:{file:basePath + req.body.filename}})
+    .then((alreadyExist)=>{
+        if(alreadyExist.length != 0)
+            return res.status(400).send('File with that name already exists.');
+
+        //creating file
+        if (!req.files){
+            return res.status(400).send('No files were uploaded.');
+        }
+        var fileUp = req.files.sound;
+        console.log(req.files);
+        fileUp.mv(basePath+req.body.filename).then(()=>
+        {
+            db.create({
+                file: basePath + req.body.filename,
+                name: req.body.name || "Anonymous",
+                adr : req.body.adr,
+                lon: req.body.lon,
+                lat: req.body.lat,
+                createdAt: new Date()
+            }).then((ret)=>{
+                res.redirect('/uploadDone.html');
+            }).catch((err)=>{
+                console.log(err);
+                res.send(err);
+            });
+        }).catch((err)=>{
+            console.log(err);
+            res.send(err);
+        });
     });
 });
 

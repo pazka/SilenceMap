@@ -11,6 +11,7 @@ var sequelize = new Sequelize(
 var sound = sequelize.define('sound', {
     id: {type: Sequelize.INTEGER, primaryKey : true},
     file: Sequelize.TEXT,
+    adr: Sequelize.TEXT,
     name: Sequelize.TEXT,
     lon: Sequelize.FLOAT,
     lat: Sequelize.FLOAT,

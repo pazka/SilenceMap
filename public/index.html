@@ -4,17 +4,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="Silence Map" content="Silence Map"/>
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <title>StrasSound</title>
+    <title>Silence Map</title>
 </head>
 <body>
     <div id="map"></div>
     <audio id="player"></audio>
-    <button type="button" id="test" onclick="test()">TEST</button>
+    <button type="button" id="add" onclick="showForm()">TEST</button>
+     <form ref='uploadForm'
+      id='uploadForm'
+      action='http://localhost:80/api/newSound'
+      method='post'
+      encType="multipart/form-data">
+    <label for="name">Nom</label> <input type="text" name="name" />
+  <label for="adr">Adresse</label> <input required type="text" name="adr" />
+    <label for="lon">Lon</label> <input required type="number" name="lon" id="lon"/>
+    <label for="lat">Lat</label><input required type="number" name="lat" id="lat"/>
+    <button type="button" name="getLoc" onclick="getLocalisation()">GetLoc</button>
+    <label for="filename" >finename</label><input accept=".mp3, .flac, .wav" type="text" name="filename" /><input required type="file" name="sound" id="file"/>
+
+    <input type='submit' value='upload' />
+    </form>
+
+
     <script type="text/javascript" src="mapStyle.js"></script>
     <script type="text/javascript" src="map.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVBPnK06zE4EVfcvXzWtVfjBTRASMP21c&callback=initMap">
     </script>

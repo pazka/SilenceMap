@@ -11,14 +11,6 @@ function showDetail(){
 
 }
 
-function getLocation(callback) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callback);
-    } else {
-        alert( "Geolocation is not supported by this browser.");
-    }
-}
-
 function initMap() {
     var allMarks = [
         {pos :{lat:48.5840324, lng: 7.744312}, title :"Homme de fer", sound:"audio/homme de fer.mp3"},
@@ -26,25 +18,26 @@ function initMap() {
     ];
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
-        center: allMarks[0].pos,
+        center: {lat:48.5840324, lng: 7.744312},
         styles : mapStyle
     });
+}
 
-    var i =0;
-    window.markers= [];
-    window.infos = [];
-    window.players = {};
+function placeMarker(mark){
+    var marker = new google.maps.Marker({
+        position: elem.pos,
+        map: map,
+        self : markers[i],
+        infos : new google.maps.InfoWindow({
+            content: "<p>"+mark.title+"</p>"
+        }),
+        sound : mark.file
+    });
+}
+
 
     allMarks.forEach(function(elem){
-        markers[i] = new google.maps.Marker({
-            position: elem.pos,
-            map: map,
-            self : markers[i],
-            infos : new google.maps.InfoWindow({
-                content: "<p>"+elem.title+"</p>"
-            }),
-            sound : elem.sound
-        });
+        markers[i] =
 
         window.players[elem.sound] = $("<audio src ='audio/"+elem.sound+"'></audio>");
 
@@ -60,14 +53,34 @@ function initMap() {
 
         i++;
     });
+function getLocalisation(){
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((pos)=>{
+            console.log(pos);
+            $("#lon").attr("value",pos.coords.longitude);
+            $("#lat").attr("value",pos.coords.latitude);
+        },
+        (err)=>{
+            alert(err);
+        });
+    } else {
+        alert( "Geolocation is not supported by this browser.");
+    }
 }
 
 function test(){
+
     //alert(map.center.lat() +"///"+map.center.lng()+"///"+map.zoom);
-    $.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.00010*1.5*(25-map.zoom)})
+    /*$.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.00010*1.5*(25-map.zoom)})
     .then((allSound)=>{
             alert(allSound);
-        });
+        });*/
         /*
         48.5840324///7.744312000000036///16
         48.58390464755429///7.751114082061816///16
