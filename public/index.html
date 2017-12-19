@@ -6,27 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Silence Map</title>
 </head>
 <body>
+    <div class="controls">
+        <h1>Silence Map</h1>
+        <div class="btns">
+            <button type="button" class="btn-circle btn-lg" onclick="showForm()">+</button>
+            <button type="button" class="btn-circle btn-lg" onclick="showHelp()">?</button>
+        </div>
+    </div>
+
     <div id="map"></div>
     <audio id="player"></audio>
-    <button type="button" id="add" onclick="showForm()">TEST</button>
-     <form ref='uploadForm'
-      id='uploadForm'
-      action='./api/newSound'
-      method='post'
-      encType="multipart/form-data">
-    <label for="name">Nom</label> <input type="text" name="name" />
-    <label for="adr">Adresse</label> <input required type="text" name="adr" />
-    <label for="lon">Lon</label> <input required type="number" name="lon" id="lon"/>
-    <label for="lat">Lat</label><input required type="number" name="lat" id="lat"/>
-    <button class="btn" type="button" name="getLoc" onclick="getLocalisation()">Votre Localisation</button>
-    <button class="btn" type="button" name="getMapLoc" onclick="getMapLocalisation()">Localisation de la map</button>
-    <input class="btn" required accept=".mp3" type="file" name="sound" id="file"/>
 
-    <input class="btn" type='submit' value='upload' />
-    </form>
+    <div id="add">
+        <div>
+            <h2>Add a Silence</h2>
+            <form ref='uploadForm'
+              id='uploadForm'
+              action='./api/newSound'
+              method='post'
+              encType="multipart/form-data">
+                <p><label for="name">Nom</label> <input type="text" name="name" /></p>
+                <p><label for="adr">Adresse</label> <input required type="text" name="adr" /></p>
+                <p><label for="lon">Lon</label> <input required type="number" name="lon" id="lon"/></p>
+                <p><label for="lat">Lat</label><input required type="number" name="lat" id="lat"/></p>
+                <p><button class="btn" type="button" name="getLoc" onclick="getLocalisation()">Your Localisation</button>
+                <button class="btn" type="button" name="getMapLoc" onclick="getMapLocalisation()">Localisation from map</button></p>
+                <p><input class="btn" required accept=".mp3" type="file" name="sound" id="file"/></p>
+                <p><input class="btn" type='submit' value='upload' />
+            </form>
+        </div>
+    </div>
+
+
+    <div id="help">
+        <div >
+            <h2>Explications</h2>
+            <p>Welcome to the Silence map!!</p>
+            <p>Here you can post the quiet place around you like this:</p>
+            </br>
+            <p>Step 1: Record a noise somewhere around you</p>
+            <p>Step 2: Find on Google Street View the street where was your silence and take the geolocation code.</p>
+            <p>Step 3: Fill out the form.</p>
+            </br>
+            <p>You can also enjoy the silence around the world by you clicking on the differents markers displayed on the map.</p>
+        </div>
+    </div>
 
 
     <script type="text/javascript" src="mapStyle.js"></script>

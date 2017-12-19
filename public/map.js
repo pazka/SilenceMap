@@ -1,14 +1,28 @@
 
 window.showed = true;
 var map ;
+var hshowed = false;
+var fshowed = false;
 
-function showDetail(){
-    showed = (showed ? false : true);
-    if(!showed)
-    $("#otherPre").css("display","inline");
+function showHelp(){
+    hshowed = (hshowed ? false : true);
+    if(fshowed)
+        showForm();
+
+    if(hshowed)
+    $("#help").css("display","block");
     else
-    $("#otherPre").css("display","none");
+    $("#help").css("display","none");
+}
+function showForm(){
+    fshowed = (fshowed ? false : true);
+    if(hshowed)
+        showHelp();
 
+    if(fshowed)
+    $("#add").css("display","block");
+    else
+    $("#add").css("display","none");
 }
 
 function initMap() {
@@ -22,9 +36,11 @@ function initMap() {
 
 function getMarkers(){
     $.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.10*(25-map.zoom)}).then((allSound)=>{
-        allSound.forEach((elem)=>{
-            placeMarker(elem);
-        });
+        if(allSound){
+            allSound.forEach((elem)=>{
+                placeMarker(elem);
+            });
+        }
     });
 }
 
@@ -64,7 +80,7 @@ function getLocalisation(){
             $("#lat").attr("value",pos.coords.latitude);
         },
         (err)=>{
-            alert(err);
+            alert(JSON.stringify(err));
         });
     } else {
         alert( "Geolocation is not supported by this browser.");
@@ -77,21 +93,4 @@ function getMapLocalisation(){
 }
 
 function test(){
-
-    //alert(map.center.lat() +"///"+map.center.lng()+"///"+map.zoom);
-    /*$.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.00010*1.5*(25-map.zoom)})
-    .then((allSound)=>{
-    alert(allSound);
-});*/
-/*
-48.5840324///7.744312000000036///16
-48.58390464755429///7.751114082061816///16
-0,00012775244571 // 16
-
-0,000007984527856875 //16
-0,000040556172565 //14
-
-48.58445114186436///7.744687509262134///14
-48.58388335544845///7.771380853378345///14
-0,00056778641591//14*/
 }

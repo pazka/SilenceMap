@@ -13,8 +13,6 @@ router.get('/soundId', function(req, res, next) {
 
 router.get('/soundByLoc', function(req, res, next) {
 
-    console.log("here is bddpsw : " + process.env.bddpsw);
-
   db.findAll({where:{
       lon : {$between : [req.query.lon - req.query.radius, req.query.lon + req.query.radius]},
       lat : {$between : [req.query.lat - req.query.radius, req.query.lat + req.query.radius]}
@@ -33,11 +31,11 @@ var serverPath = "./public/audio/";
 var baseExt = ".mp3";
 router.post('/newSound',(req,res,next) =>{
     if(!req.body.name || !req.body.adr || !req.body.lon || !req.body.lat || !req.files){
-        return res.status(400).send('not all param present : '  
-	+ req.body.name 
-	+ req.body.adr 
-	+ req.body.lon 
-	+ req.body.lat 
+        return res.status(400).send('not all param present : '
+	+ req.body.name
+	+ req.body.adr
+	+ req.body.lon
+	+ req.body.lat
 	+ req.files)
     }
 	console.log(req.files);

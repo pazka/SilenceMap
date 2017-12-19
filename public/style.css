@@ -1,15 +1,90 @@
-#map {
-    height: 100vh;
+body{
+    overflow:hidden;
+}
+
+h2{
+    justify-content: center;
+    align-content: center;
+}
+
+.controls{
+    display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.controls > *{
+    align-self: right;
+    margin: auto;
+    margin-right: 0px;
+}
+
+.btns >* {
+    font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+#add, #help{
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
-    clip-path: circle(300px at center);
+    height: 100%;
+    z-index: 999;
+    overflow:hidden;
+}
+
+#add > *, #help >  *{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    margin: 5% 20% 10% 20%;
+    padding: 5%;
+}
+
+#map {
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    clip-path: circle(25% at center);
     z-index : 10;
       /* OLD VALUE example: circle(245px, 140px, 50px); */
       /* Yep, even the new clip-path has deprecated stuff. */
 }
 
-#add{
-    position: absolute;
-    top: 50px;
-    left : 50px;
-    z-index: 50;
+
+#uploadForm > * {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hidden{
+    display:none;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 0px 16px;
+  font-size: 30px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 40px;
+  line-height: 1.33;
+  border-radius: 35px;
 }
