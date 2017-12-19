@@ -76,8 +76,8 @@ function getLocalisation(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition((pos)=>{
             console.log(pos);
-            $("#lon").attr("value",pos.coords.longitude);
-            $("#lat").attr("value",pos.coords.latitude);
+            $("#lon").val(pos.coords.longitude);
+            $("#lat").val(pos.coords.latitude);
         },
         (err)=>{
             alert(JSON.stringify(err));
@@ -88,8 +88,8 @@ function getLocalisation(){
 }
 
 function getMapLocalisation(){
-    $("#lon").attr("value",map.center.lng());
-    $("#lat").attr("value",map.center.lat());
+    $("#lon").val(map.center.lng());
+    $("#lat").val(map.center.lat());
 }
 
 function test(){
