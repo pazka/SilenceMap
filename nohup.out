@@ -1,0 +1,284 @@
+
+> testapp@0.0.0 start /root/SilenceMap
+> node ./bin/www
+
+Tue, 19 Dec 2017 19:48:11 GMT sequelize deprecated String based operators are now deprecated. Please use Symbol based operators for better security, read more at http://docs.sequelizejs.com/manual/tutorial/querying.html#operators at node_modules/sequelize/lib/sequelize.js:236:13
+[0mGET / [36m304 [0m8.090 ms - -[0m
+[0mGET /css/bootstrap.css [36m304 [0m2.405 ms - -[0m
+[0mGET /style.css [36m304 [0m2.147 ms - -[0m
+[0mGET /mapStyle.js [36m304 [0m0.909 ms - -[0m
+[0mGET /map.js [36m304 [0m0.378 ms - -[0m
+[0mGET /jquery.min.js [36m304 [0m0.900 ms - -[0m
+[0mGET /js/bootstrap.js [36m304 [0m0.838 ms - -[0m
+[0mGET /js/bootstrap.bundle.js [36m304 [0m0.276 ms - -[0m
+{ SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/root/SilenceMap/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+    at tryCatcher (/root/SilenceMap/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/root/SilenceMap/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+  name: 'SequelizeAccessDeniedError',
+  parent: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' },
+  original: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' } }
+[0mGET /api/soundByLoc?lon=7.742659759246875&lat=48.58391884228625&radius=0.9 [32m200 [0m70.154 ms - 345[0m
+
+> testapp@0.0.0 start /root/SilenceMap
+> node ./bin/www
+
+Tue, 19 Dec 2017 19:50:21 GMT sequelize deprecated String based operators are now deprecated. Please use Symbol based operators for better security, read more at http://docs.sequelizejs.com/manual/tutorial/querying.html#operators at node_modules/sequelize/lib/sequelize.js:236:13
+[0mGET / [36m304 [0m9.265 ms - -[0m
+[0mGET /css/bootstrap.css [36m304 [0m2.213 ms - -[0m
+[0mGET /style.css [36m304 [0m1.796 ms - -[0m
+[0mGET /mapStyle.js [36m304 [0m0.949 ms - -[0m
+[0mGET /map.js [36m304 [0m0.219 ms - -[0m
+[0mGET /jquery.min.js [36m304 [0m0.371 ms - -[0m
+[0mGET /js/bootstrap.js [36m304 [0m0.235 ms - -[0m
+[0mGET /js/bootstrap.bundle.js [36m304 [0m0.274 ms - -[0m
+
+> testapp@0.0.0 start /root/SilenceMap
+> node ./bin/www
+
+Tue, 19 Dec 2017 19:51:20 GMT sequelize deprecated String based operators are now deprecated. Please use Symbol based operators for better security, read more at http://docs.sequelizejs.com/manual/tutorial/querying.html#operators at node_modules/sequelize/lib/sequelize.js:236:13
+[0mGET / [36m304 [0m8.279 ms - -[0m
+[0mGET /css/bootstrap.css [36m304 [0m2.471 ms - -[0m
+[0mGET /style.css [36m304 [0m2.199 ms - -[0m
+[0mGET /mapStyle.js [36m304 [0m2.131 ms - -[0m
+[0mGET /map.js [36m304 [0m2.129 ms - -[0m
+[0mGET /js/bootstrap.js [36m304 [0m1.633 ms - -[0m
+[0mGET /jquery.min.js [36m304 [0m1.346 ms - -[0m
+[0mGET /js/bootstrap.bundle.js [36m304 [0m0.325 ms - -[0m
+{ SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/root/SilenceMap/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+    at tryCatcher (/root/SilenceMap/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/root/SilenceMap/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+  name: 'SequelizeAccessDeniedError',
+  parent: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' },
+  original: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' } }
+[0mGET /api/soundByLoc?lon=7.748067092620898&lat=48.58126435804108&radius=0.9 [32m200 [0m58.813 ms - 345[0m
+{ SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/root/SilenceMap/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+    at tryCatcher (/root/SilenceMap/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/root/SilenceMap/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+  name: 'SequelizeAccessDeniedError',
+  parent: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' },
+  original: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' } }
+[0mGET /api/soundByLoc?lon=7.749794435226489&lat=48.58007192402002&radius=0.9 [32m200 [0m14.450 ms - 345[0m
+{ SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/root/SilenceMap/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+    at tryCatcher (/root/SilenceMap/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/root/SilenceMap/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+  name: 'SequelizeAccessDeniedError',
+  parent: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' },
+  original: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' } }
+[0mGET /api/soundByLoc?lon=7.744451474868823&lat=48.58332266010309&radius=0.9 [32m200 [0m10.541 ms - 345[0m
+{ SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/root/SilenceMap/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+    at tryCatcher (/root/SilenceMap/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/root/SilenceMap/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/root/SilenceMap/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/root/SilenceMap/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+  name: 'SequelizeAccessDeniedError',
+  parent: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' },
+  original: 
+   { Error: Access denied for user 'root'@'localhost' (using password: NO)
+       at Packet.asError (/root/SilenceMap/node_modules/mysql2/lib/packets/packet.js:713:13)
+       at ClientHandshake.Command.execute (/root/SilenceMap/node_modules/mysql2/lib/commands/command.js:28:22)
+       at Connection.handlePacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:515:28)
+       at PacketParser.onPacket (/root/SilenceMap/node_modules/mysql2/lib/connection.js:94:16)
+       at PacketParser.executeStart (/root/SilenceMap/node_modules/mysql2/lib/packet_parser.js:77:14)
+       at Socket.<anonymous> (/root/SilenceMap/node_modules/mysql2/lib/connection.js:102:29)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at Socket.Readable.push (_stream_readable.js:134:10)
+       at TCP.onread (net.js:547:20)
+     code: 'ER_ACCESS_DENIED_ERROR',
+     errno: 1045,
+     sqlState: '28000',
+     sqlMessage: 'Access denied for user \'root\'@\'localhost\' (using password: NO)' } }
+[0mGET /api/soundByLoc?lon=7.740460347854663&lat=48.584259514662016&radius=0.9 [32m200 [0m36.914 ms - 345[0m

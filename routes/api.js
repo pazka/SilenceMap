@@ -40,7 +40,8 @@ router.post('/newSound',(req,res,next) =>{
 	+ req.body.lat 
 	+ req.files)
     }
-    db.findAll({where:{file:serverPath + req.body.filename + baseExt}})
+	console.log(req.files);
+    db.findAll({where:{file:serverPath + req.files.sound.name + baseExt}})
     .then((alreadyExist)=>{
         if(alreadyExist.length != 0)
             return res.status(400).send('File with that name already exists.');
@@ -50,10 +51,10 @@ router.post('/newSound',(req,res,next) =>{
             return res.status(400).send('No files were uploaded.');
         }
         var fileUp = req.files.sound;
-        fileUp.mv(serverPath+req.body.filename + baseExt).then(()=>
+        fileUp.mv(serverPath + req.files.sound.name + baseExt).then(()=>
         {
             db.create({
-                file: publicPath + req.body.filename + baseExt,
+                file: publicPath + req.files.sound.name + baseExt,
                 name: req.body.name || "Anonymous",
                 adr : req.body.adr,
                 lon: req.body.lon,
