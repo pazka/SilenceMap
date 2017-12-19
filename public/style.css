@@ -10,13 +10,10 @@ h2{
 .controls{
     display: flex;
   justify-content: center;
-  align-items: flex-end;
 }
 
 .controls > *{
-    align-self: right;
     margin: auto;
-    margin-right: 0px;
 }
 
 .btns >* {

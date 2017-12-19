@@ -31,8 +31,8 @@
               encType="multipart/form-data">
                 <p><label for="name">Nom</label> <input type="text" name="name" /></p>
                 <p><label for="adr">Adresse</label> <input required type="text" name="adr" /></p>
-                <p><label for="lon">Lon</label> <input required type="number" name="lon" id="lon"/></p>
-                <p><label for="lat">Lat</label><input required type="number" name="lat" id="lat"/></p>
+                <p><label for="lon">Lon</label> <input required type="number" step=any name="lon" id="lon"/></p>
+                <p><label for="lat">Lat</label><input required type="number" step=any name="lat" id="lat"/></p>
                 <p><button class="btn" type="button" name="getLoc" onclick="getLocalisation()">Your Localisation</button>
                 <button class="btn" type="button" name="getMapLoc" onclick="getMapLocalisation()">Localisation from map</button></p>
                 <p><input class="btn" required accept=".mp3" type="file" name="sound" id="file"/></p>
