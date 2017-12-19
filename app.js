@@ -8,6 +8,8 @@ var api = require('./routes/api');
 
 var app = express();
 
+console.log("here is bddpsw : " + process.env.bddpsw);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

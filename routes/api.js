@@ -12,6 +12,9 @@ router.get('/soundId', function(req, res, next) {
 });
 
 router.get('/soundByLoc', function(req, res, next) {
+
+    console.log("here is bddpsw : " + process.env.bddpsw);
+
   db.findAll({where:{
       lon : {$between : [req.query.lon - req.query.radius, req.query.lon + req.query.radius]},
       lat : {$between : [req.query.lat - req.query.radius, req.query.lat + req.query.radius]}

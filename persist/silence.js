@@ -18,4 +18,5 @@ var sound = sequelize.define('sound', {
     createdAt: Sequelize.DATE
 });
 
+
 module.exports = sound;
