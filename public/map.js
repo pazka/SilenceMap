@@ -31,7 +31,7 @@ function initMap() {
         center: {lat:48.5840324, lng: 7.744312},
         styles : mapStyle
     });
-    map.addListener('center_changed',getMarkers);
+    map.addListener('dragend',getMarkers);
 }
 
 function getMarkers(){
