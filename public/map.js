@@ -35,7 +35,7 @@ function initMap() {
 }
 
 function getMarkers(){
-    $.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.10*(25-map.zoom)}).then((allSound)=>{
+    $.get('/api/soundByLoc',{lon:map.center.lng(),lat:map.center.lat(),radius:0.10}).then((allSound)=>{
         if(allSound){
             allSound.forEach((elem)=>{
                 placeMarker(elem);

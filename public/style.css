@@ -40,11 +40,10 @@ h2{
 }
 
 #map {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
     position: absolute;
-    bottom: 0px;
-    clip-path: circle(25% at center);
+    clip-path: circle(28% at center);
     z-index : 10;
       /* OLD VALUE example: circle(245px, 140px, 50px); */
       /* Yep, even the new clip-path has deprecated stuff. */
