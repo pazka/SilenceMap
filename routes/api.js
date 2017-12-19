@@ -29,9 +29,14 @@ var publicPath = "./audio/";
 var serverPath = "./public/audio/";
 var baseExt = ".mp3";
 router.post('/newSound',(req,res,next) =>{
-    if(!req.body.filename || !req.body.name || !req.body.adr || !req.body.lon || !req.body.lat || !req.files)
-        return res.status(400).send('not all param present');
-        console.log(req.files);
+    if(!req.body.name || !req.body.adr || !req.body.lon || !req.body.lat || !req.files){
+        return res.status(400).send('not all param present : '  
+	+ req.body.name 
+	+ req.body.adr 
+	+ req.body.lon 
+	+ req.body.lat 
+	+ req.files)
+    }
     db.findAll({where:{file:serverPath + req.body.filename + baseExt}})
     .then((alreadyExist)=>{
         if(alreadyExist.length != 0)
@@ -42,7 +47,6 @@ router.post('/newSound',(req,res,next) =>{
             return res.status(400).send('No files were uploaded.');
         }
         var fileUp = req.files.sound;
-        console.log(req.files);
         fileUp.mv(serverPath+req.body.filename + baseExt).then(()=>
         {
             db.create({
