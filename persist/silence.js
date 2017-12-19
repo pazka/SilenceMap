@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var sequelize = new Sequelize(
     'silence',
      'root',
-      '',
+      process.env.bddpsw,
       {host: 'localhost',
       dialect: 'mysql',
       // disable logging; default: console.log
